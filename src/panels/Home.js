@@ -22,13 +22,13 @@ const Home = ({ id, go, fetchedUser }) => (
 			</Group>} */}
 		<iframe width="800" height="400" src="https://www.youtube.com/embed/Jk0xMsXME1U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io/transation_web/" width="770" height="400" frameborder="0" scrolling="no"></iframe>
-		{/* <Group title="Navigation Example">
+		<Group title="Navigation Example">
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">
-					Hello Me
+					WHAT IF Me
 				</Button>
 			</Div>
-		</Group> */}
+		</Group>
 	</Panel>
 );
 
