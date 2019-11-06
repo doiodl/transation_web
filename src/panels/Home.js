@@ -25,7 +25,7 @@ const Home = ({ id, go, fetchedUser }) => (
 		<Group title="Navigation Example">
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">
-					WHAT IF Me
+					fuck IF Me
 				</Button>
 			</Div>
 		</Group>
