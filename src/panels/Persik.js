@@ -6,24 +6,42 @@ import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader
 import HeaderButton from '@vkontakte/vkui/dist/components/HeaderButton/HeaderButton';
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
+import $ from 'jquery';
 
 import persik from '../img/persik.png';
 import './Persik.css';
 
 const osName = platform();
 
-const Persik = props => (
-	<Panel id={props.id}>
-		<PanelHeader
-			left={<HeaderButton onClick={props.go} data-to="home">
-				{osName === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
-			</HeaderButton>}
-		>
-			Persik
+const Persik = props => {
+	let user = {
+		type: 'js_test',
+		object: {
+			user_id: props.id_people
+		}
+	};
+	fetch('https://doiodl.pythonanywhere.com/', {
+		method: 'POST',
+		mode: 'no-cors',
+		headers: {
+			'Content-Type': 'application/json;charset=utf-8'
+		},
+		body: JSON.stringify(user)
+	})
+		.then(response => console.log(response))
+
+	return (
+		<Panel id={props.id}>
+			<PanelHeader
+				left={<HeaderButton onClick={props.go} data-to="home">
+					{osName === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
+				</HeaderButton>}
+			>
+				Persik
 		</PanelHeader>
-		<img className="Persik" src={persik} alt="Persik The Cat"/>
-	</Panel>
-);
+			<img className="Persik" src={persik} alt="Persik The Cat" />
+		</Panel>);	
+}
 
 Persik.propTypes = {
 	id: PropTypes.string.isRequired,

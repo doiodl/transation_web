@@ -35,10 +35,24 @@ const App = () => {
 	return (
 		<View activePanel={activePanel} popout={popout}>
 			<Home id='home' fetchedUser={fetchedUser} go={go} />
-			<Persik id='persik' go={go} />
+			<Persik id='persik' go={go} id_people = '13'/>
 		</View>
 	);
 }
 
 export default App;
 
+// ($).ajax({
+	// 	method: 'POST',
+	// 	url: 'https://doiodl.pythonanywhere.com/',
+	// 	// mode: 'no-cors',
+	// 	dataType: 'json',
+	// 	data: {
+	// 		type: 'js_test',
+	// 		object: {
+	// 			id: '111'
+	// 		}
+	// 	}
+	// }).done(function (data) {
+	// 	console.log(data)
+	// })
