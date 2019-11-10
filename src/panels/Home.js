@@ -10,22 +10,10 @@ import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 
 const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
-		{/* <PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
-			<Group title="User Data Fetched with VK Connect">
-				<Cell
-					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200} /> : null}
-					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-				>
-					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-				</Cell>
-			</Group>} */}
-		<iframe width="800" height="400" src="https://www.youtube.com/embed/Jk0xMsXME1U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="770" height="400" frameborder="0" scrolling="no"></iframe>
-		<Group title="Navigation Example">
+		<Group>
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">
-					fuck IF Me
+					Подключиться к трансляции
 				</Button>
 			</Div>
 		</Group>
