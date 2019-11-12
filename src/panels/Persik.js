@@ -28,14 +28,21 @@ const Persik = props => {
 		};
 		fetch('https://doiodl.pythonanywhere.com/', {
 			method: 'POST',
-			mode: 'no-cors',
+			// mode: 'no-cors',
 			headers: {
 				'Content-Type': 'application/json;charset=utf-8'
 			},
 			body: JSON.stringify(user)
 		})
-			.then(response => console.log(response))
+			.then(function (response) {
+				console.log(response)
+				return response.json();
+		  }).then(function(data) {
+			console.log(data);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+		  });
+		
 	}
+	send_req()
 	setInterval(function(){ 
 			send_req() 
 		}, 150000000);

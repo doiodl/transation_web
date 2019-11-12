@@ -31,8 +31,6 @@ const App = () => {
 	const go = e => {
 		setActivePanel(e.currentTarget.dataset.to);
 	};
-	// const id_m = fetchedUser.id;
-	//console.log(fetchedUser.id)
 	return (
 		<View activePanel={activePanel} popout={popout}>
 			<Home id='home' fetchedUser={fetchedUser} go={go} />
