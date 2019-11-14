@@ -56,7 +56,7 @@ const Persik = props => {
 				Трансляция
 		</PanelHeader>
 			<Group>
-				<iframe width="800" height="400" src="https://www.youtube.com/embed/Jk0xMsXME1U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="800" height="400" src="https://www.youtube.com/watch?v=upnuYwd94tw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800" height="400" frameborder="0" scrolling="no"></iframe>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
