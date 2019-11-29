@@ -41,12 +41,14 @@ const Persik = props => {
 		  }).then(function(data) {
 			console.log(data);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
 		  });
-		
 	}
 	send_req()
 	setInterval(function(){ 
 			send_req() 
 	}, 150000000);
+	// lWidth = screen.width;
+
+	console.log(100)
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -64,7 +66,9 @@ const Persik = props => {
 					playing
 					controls
 					/>
-					<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width='device-width' height="800" frameborder="0"></iframe>
+					<Div className='iframe-container'>
+						<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width='device-width' height="800" initial-scale="1"></iframe>
+					</Div>
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
@@ -79,5 +83,6 @@ Persik.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 };
+
 
 export default Persik;
