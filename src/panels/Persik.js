@@ -67,7 +67,7 @@ const Persik = props => {
 					controls
 					/>
 					<Div className='iframe-container'>
-						<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width='device-width' height="800" initial-scale="1"></iframe>
+						<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io"></iframe>
 					</Div>
 				</Div>
 				<Div>

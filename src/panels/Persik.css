@@ -10,6 +10,7 @@
   width: 100%;
   padding-bottom: 56.25%; 
   height: 0;
+  scrolling: 1;
 }
 .iframe-container iframe{
   position: absolute;
@@ -17,4 +18,5 @@
   left: 0;
   width: 100%;
   height: 100%;
+  scrolling: 1;
 }
