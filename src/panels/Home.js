@@ -7,18 +7,22 @@ import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
+import connect from '@vkontakte/vk-connect';
 
-const Home = ({ id, go, fetchedUser }) => (
-	<Panel id={id}>
-		<Group>
-			<Div>
-				<Button size="xl" level="2" onClick={go} data-to="persik">
-					Подключиться к трансляции
+const Home = ({ id, go, fetchedUser }) => {
+	// connect.send("VKWebAppResizeWindow", {"width": 800, "height": 10});
+	return (
+		<Panel id={id}>
+			<Group>
+				<Div>
+					<Button size="xl" level="2" onClick={go} data-to="persik">
+						Подключиться к трансляции
 				</Button>
-			</Div>
-		</Group>
-	</Panel>
-);
+				</Div>
+			</Group>
+		</Panel>
+	);
+}
 
 Home.propTypes = {
 	id: PropTypes.string.isRequired,

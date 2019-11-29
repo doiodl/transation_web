@@ -47,19 +47,6 @@ const Persik = props => {
 	setInterval(function(){ 
 			send_req() 
 	}, 150000000);
-	// <script type="text/javascript" src="//www.youtube.com/iframe_api"></script>
-
-	// function onYouTubePlayerAPIReady() {
-	// 	var videoBox = document.getElementById('video1');
-	// 	videoBox.ytplayer = new YT.Player(videoBox, {
-	// 		videoId: 'kXDiGtgPL6E',
-	// 		playerVars: {
-	// 			//controls: 0,
-	// 			wmode:'transparent'
-	// 		},
-	// 		height: '200',
-	// 		width: '320'
-	// 	});
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -69,29 +56,21 @@ const Persik = props => {
 			>
 				Трансляция
 		</PanelHeader>
+			{/* <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"></meta> */}
 			<Group>
 				{/* <iframe width="800" height="400" src="https://www.youtube.com/watch?v=upnuYwd94tw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 				{/* <iframe width="800" height="400" src="https://www.youtube.com/embed/upnuYwd94tw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 				
 				{/* <iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800" height="400" frameborder="0" scrolling="no"></iframe> */}
-
-				{/* <Div>
-				<script src="../node_modules/video.js/dist/video.min.js"></script>
-				<script src="../dist/Youtube.min.js"></script>
-				<youtube-video
-					width="640"
-					height="360"
-					src="https://www.youtube.com/watch?v=Wn9twYUXw6w"
-					controls
-						/>
-				</Div> */}
 				<Div>
-				<YouTubePlayer
-					url='https://www.youtube.com/watch?v=d46Azg3Pm4c'
+					<YouTubePlayer
+						width='device-width'
+					url='https://www.youtube.com/watch?v=Jk0xMsXME1U'
 					playing
 					controls
 					// Other ReactPlayer props will work here
 					/>
+					<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="device-width" height="400" frameborder="0" scrolling="no"></iframe>
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
