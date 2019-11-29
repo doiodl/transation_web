@@ -62,7 +62,6 @@ const Persik = props => {
 					<YouTubePlayer
 					width='device-width'
 					url='https://www.youtube.com/watch?v=9YffrCViTVk'
-					playing
 					controls
 					/>
 					<Div className='iframe-container'>

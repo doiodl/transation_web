@@ -10,7 +10,6 @@ import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import connect from '@vkontakte/vk-connect';
 
 const Home = ({ id, go, fetchedUser }) => {
-	connect.send("VKWebAppResizeWindow", {"width": 800, "height": 900});
 	return (
 		<Panel id={id}>
 			<Group>
