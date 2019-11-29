@@ -10,5 +10,4 @@ import App from './App';
 connect.send('VKWebAppInit');
 // connect.subscribe((e) => console.log(e));
 // connect.send('VKWebAppClose');
-connect.send("VKWebAppResizeWindow", {"width": 800, "height": 900});
 ReactDOM.render(<App />, document.getElementById('root'));
