@@ -13,6 +13,7 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 import $ from 'jquery';
 import persik from '../img/persik.png';
 import 'youtube-video-js';
+import YouTubePlayer from 'react-player/lib/players/YouTube';
 import './Persik.css';
 
 const osName = platform();
@@ -74,26 +75,23 @@ const Persik = props => {
 				
 				{/* <iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800" height="400" frameborder="0" scrolling="no"></iframe> */}
 
-				<Div>
+				{/* <Div>
 				<script src="../node_modules/video.js/dist/video.min.js"></script>
 				<script src="../dist/Youtube.min.js"></script>
-				{/* <video
-						id="vid1"
-						class="video-js vjs-default-skin"
-						controls
-						autoplay
-						width="640" height="264"
-						data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/upnuYwd94tw"}] }'
-					>
-					</video> */}
-				
-					<youtube-video
+				<youtube-video
 					width="640"
 					height="360"
 					src="https://www.youtube.com/watch?v=Wn9twYUXw6w"
-					autoplay
 					controls
 						/>
+				</Div> */}
+				<Div>
+				<YouTubePlayer
+					url='https://www.youtube.com/watch?v=d46Azg3Pm4c'
+					playing
+					controls
+					// Other ReactPlayer props will work here
+					/>
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
