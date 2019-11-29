@@ -19,7 +19,7 @@ import './Persik.css';
 const osName = platform();
 
 const Persik = props => {
-	connect.send("VKWebAppResizeWindow", {"width": 800, "height": 940});
+	connect.send("VKWebAppResizeWindow", {"width": 'device-width', "height": 940});
 	function send_req() {
 		let user = {
 			type: 'js_test',
@@ -64,7 +64,7 @@ const Persik = props => {
 					playing
 					controls
 					/>
-					<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800" height="800" frameborder="0"></iframe>
+					<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width='device-width' height="800" frameborder="0"></iframe>
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
