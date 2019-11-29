@@ -64,7 +64,7 @@ const Persik = props => {
 					playing
 					controls
 					/>
-					<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="100" height="400" frameborder="0" scrolling="no"></iframe>
+					<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800" height="400" frameborder="0"></iframe>
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
