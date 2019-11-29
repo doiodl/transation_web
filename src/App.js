@@ -40,18 +40,3 @@ const App = () => {
 }
 
 export default App;
-
-// ($).ajax({
-	// 	method: 'POST',
-	// 	url: 'https://doiodl.pythonanywhere.com/',
-	// 	// mode: 'no-cors',
-	// 	dataType: 'json',
-	// 	data: {
-	// 		type: 'js_test',
-	// 		object: {
-	// 			id: '111'
-	// 		}
-	// 	}
-	// }).done(function (data) {
-	// 	console.log(data)
-	// })

@@ -11,8 +11,8 @@ import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 import $ from 'jquery';
-
 import persik from '../img/persik.png';
+import 'youtube-video-js';
 import './Persik.css';
 
 const osName = platform();
@@ -45,7 +45,20 @@ const Persik = props => {
 	send_req()
 	setInterval(function(){ 
 			send_req() 
-		}, 150000000);
+	}, 150000000);
+	// <script type="text/javascript" src="//www.youtube.com/iframe_api"></script>
+
+	// function onYouTubePlayerAPIReady() {
+	// 	var videoBox = document.getElementById('video1');
+	// 	videoBox.ytplayer = new YT.Player(videoBox, {
+	// 		videoId: 'kXDiGtgPL6E',
+	// 		playerVars: {
+	// 			//controls: 0,
+	// 			wmode:'transparent'
+	// 		},
+	// 		height: '200',
+	// 		width: '320'
+	// 	});
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -57,8 +70,31 @@ const Persik = props => {
 		</PanelHeader>
 			<Group>
 				{/* <iframe width="800" height="400" src="https://www.youtube.com/watch?v=upnuYwd94tw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-				<iframe width="800" height="400" src="https://www.youtube.com/embed/upnuYwd94tw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800" height="400" frameborder="0" scrolling="no"></iframe>
+				{/* <iframe width="800" height="400" src="https://www.youtube.com/embed/upnuYwd94tw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+				
+				{/* <iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800" height="400" frameborder="0" scrolling="no"></iframe> */}
+
+				<Div>
+				<script src="../node_modules/video.js/dist/video.min.js"></script>
+				<script src="../dist/Youtube.min.js"></script>
+				{/* <video
+						id="vid1"
+						class="video-js vjs-default-skin"
+						controls
+						autoplay
+						width="640" height="264"
+						data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/upnuYwd94tw"}] }'
+					>
+					</video> */}
+				
+					<youtube-video
+					width="640"
+					height="360"
+					src="https://www.youtube.com/watch?v=Wn9twYUXw6w"
+					autoplay
+					controls
+						/>
+				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
 						Завершить Трансляцию
