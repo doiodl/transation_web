@@ -70,7 +70,7 @@ const Persik = props => {
 					controls
 					// Other ReactPlayer props will work here
 					/>
-					<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="device-width" height="400" frameborder="0" scrolling="no"></iframe>
+					<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800" height="400" frameborder="0" scrolling="no"></iframe>
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
