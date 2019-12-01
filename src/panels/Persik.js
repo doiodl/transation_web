@@ -48,8 +48,11 @@ const Persik = props => {
 			send_req() 
 	}, 150000000);
 	// lWidth = screen.width;
-
-	console.log(100)
+	// myWebView.getSettings().setUserAgentString("Desktop");
+	navigator.__defineGetter__('userAgent', function () {
+		return "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36"
+	});
+	console.log(navigator.userAgent);
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -66,15 +69,15 @@ const Persik = props => {
 					url='https://www.youtube.com/watch?v=9YffrCViTVk'
 					controls
 					/>
-					{/* <Div className='iframe-container'>
+					<Div className='iframe-container'>
 						<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io"></iframe>
-					</Div> */}
+					</Div>
 					{/* <YouTubePlayer
 					width='device-width'
 					url='https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io'
 					controls
 					/> */}
-					<iframe allowfullscreen="" frameborder="0" height="270" src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800"></iframe>
+					{/* <iframe allowfullscreen="" frameborder="0" height="400" src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width='device-width'></iframe> */}
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
