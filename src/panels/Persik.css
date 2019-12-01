@@ -8,7 +8,7 @@
 .iframe-container{
   position: relative;
   padding-bottom: 40.25%; 
-  height: 400;
+  height: 500;
   scrolling: 1;
 }
 .iframe-container iframe{
@@ -16,6 +16,6 @@
   top: 100;
   left: 0;
   width: 80%;
-  height: 80%;
+  height: 90%;
   scrolling: 1;
 }
