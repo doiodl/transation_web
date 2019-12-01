@@ -19,7 +19,8 @@ import './Persik.css';
 const osName = platform();
 
 const Persik = props => {
-	connect.send("VKWebAppResizeWindow", {"width": 800, "height": 900});
+	connect.send("VKWebAppResizeWindow", { "width": 800, "height": 900 });
+	console.log(props);
 	function send_req() {
 		let user = {
 			type: 'js_test',
