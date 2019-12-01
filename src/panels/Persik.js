@@ -66,9 +66,15 @@ const Persik = props => {
 					url='https://www.youtube.com/watch?v=9YffrCViTVk'
 					controls
 					/>
-					<Div className='iframe-container'>
+					{/* <Div className='iframe-container'>
 						<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io"></iframe>
-					</Div>
+					</Div> */}
+					{/* <YouTubePlayer
+					width='device-width'
+					url='https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io'
+					controls
+					/> */}
+					<iframe allowfullscreen="" frameborder="0" height="270" src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width="800"></iframe>
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
