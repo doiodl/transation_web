@@ -21,7 +21,7 @@ const App = () => {
 			}
 		});
 		async function fetchData() {
-			const user = connect.sendPromise('VKWebAppGetUserInfo');
+			const user = await connect.sendPromise('VKWebAppGetUserInfo');
 			// const user = "fa";
 			setUser(user);
 			setPopout(null);
