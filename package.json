@@ -20,17 +20,19 @@
     "react-scripts": "^3.2.0"
   },
   "dependencies": {
-    "@vkontakte/icons": "^1.11.0",
-    "@vkontakte/vk-connect": "^1.6.8",
-    "@vkontakte/vkui": "^2.32.4",
+    "@vkontakte/icons": "^1.12.0",
+    "@vkontakte/vk-connect": "^1.6.12",
+    "@vkontakte/vkui": "^2.34.1",
     "axios": "^0.19.0",
     "babel-eslint": "^10.0.3",
     "chalk": "^2.4.2",
-    "core-js": "^3.3.6",
+    "core-js": "^3.5.0",
     "jquery": "^3.4.1",
+    "npm": "^6.13.4",
     "prop-types": "^15.7.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "update": "^0.7.4"
   },
   "browserslist": {
     "production": [

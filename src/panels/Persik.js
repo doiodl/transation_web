@@ -31,7 +31,6 @@ const Persik = props => {
 		};
 		fetch('https://doiodl.pythonanywhere.com/', {
 			method: 'POST',
-			// mode: 'no-cors',
 			headers: {
 				'Content-Type': 'application/json;charset=utf-8'
 			},

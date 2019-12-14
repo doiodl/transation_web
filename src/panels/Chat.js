@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+import React, { Component} from 'react';
+>>>>>>> b8b48e953e7336b53253fa9b103e5837d4d6604f
 import PropTypes from 'prop-types';
 import connect from '@vkontakte/vk-connect';
 import { platform, IOS } from '@vkontakte/vkui';
@@ -13,26 +17,33 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 import $ from 'jquery';
 import persik from '../img/persik.png';
 import 'youtube-video-js';
+import YouTubePlayer from 'react-player/lib/players/YouTube';
+import './Persik.css';
 
-class Chat extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = [];
-		console.log(props);
-	};
+class Chat extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {massive: "", cur_n: ""};
+    }
 
-	add_new(props)
-	{
-		console.log(props);
-		document.body.classList.add(props.name);
-	};
-	
-	render() {
-		return (
-		<div>
-		</div>
-	  );
-	}
+    update()
+    {
+        
+    }
+    render(){
+        const test = ["ololo", "test"];
+        return (
+
+              <div name="chats">
+                {this.state.massive.forEach((element) =>{
+                    return <span> {element} </span>;
+                })}
+              </div>
+    
+        );
+    }
+    
+
 }
-  
-export default Chat;
+
+export default Persik;
