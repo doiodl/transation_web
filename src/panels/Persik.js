@@ -15,6 +15,7 @@ import persik from '../img/persik.png';
 import 'youtube-video-js';
 import YouTubePlayer from 'react-player/lib/players/YouTube';
 import './Persik.css';
+import Chat from './Chat'
 
 const osName = platform();
 
@@ -40,19 +41,16 @@ const Persik = props => {
 				console.log(response)
 				return response.json();
 		  }).then(function(data) {
-			console.log(data);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+			  console.log(data);
 		  });
 	}
 	send_req()
 	setInterval(function(){ 
 			send_req() 
 	}, 150000000);
+
 	// lWidth = screen.width;
 	// myWebView.getSettings().setUserAgentString("Desktop");
-	navigator.__defineGetter__('userAgent', function () {
-		return "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
-	});
-	console.log(navigator.userAgent);
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -69,15 +67,23 @@ const Persik = props => {
 					url='https://www.youtube.com/watch?v=Jk0xMsXME1U'
 					controls
 					/>
-					<Div className='iframe-container'>
+				</Div>
+				<Chat name='jfajhfajhf'></Chat>
+					{/* <Div className='iframe-container'>
 						<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io"></iframe>
-					</Div>
+					</Div> */} 
+					{/* main */}
 					{/* <YouTubePlayer
 					width='device-width'
 					url='https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io'
 					controls
 					/> */}
 					{/* <iframe allowfullscreen="" frameborder="0" height="400" src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width='device-width'></iframe> */}
+				<Div class='chat-input'>
+					<form method='post' id='chat-form'>
+						<input type='text' id='message-text' class='chat-form__input' placeholder='Введите сообщение'></input>
+						<input type='submit' class='chat-form__submit' value='=>'></input>
+					</form>
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
