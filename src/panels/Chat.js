@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React from 'react';
-=======
 import React, { Component} from 'react';
->>>>>>> b8b48e953e7336b53253fa9b103e5837d4d6604f
 import PropTypes from 'prop-types';
 import connect from '@vkontakte/vk-connect';
 import { platform, IOS } from '@vkontakte/vkui';
@@ -23,19 +19,25 @@ import './Persik.css';
 class Chat extends Component {
     constructor(props) {
         super(props);
-        this.state = {massive: "", cur_n: ""};
+      this.state = { massive: ["dad", "daa","dad"], cur_n: ""};
     }
 
-    update()
-    {
-        
-    }
+  tick()
+  {
+    var m = this.state.massive;
+    this.setState({
+      massive: m.concat("kkk")
+    });
+  }
+  componentDidMount() {
+    setInterval(() => this.tick(), 3000);
+  }
     render(){
         const test = ["ololo", "test"];
         return (
 
               <div name="chats">
-                {this.state.massive.forEach((element) =>{
+                {this.state.massive.map((element, i) =>{
                     return <span> {element} </span>;
                 })}
               </div>
@@ -46,4 +48,4 @@ class Chat extends Component {
 
 }
 
-export default Persik;
+export default Chat;
