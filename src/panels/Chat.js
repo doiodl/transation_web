@@ -19,7 +19,7 @@ import './Persik.css';
 class Chat extends Component {
     constructor(props) {
         super(props);
-      this.state = { massive: ["dad", "daa","dad"], cur_n: ""};
+      this.state = { massive: ["dad", "daa","dad"], cur_n: 0};
     }
 
   tick()
@@ -33,7 +33,6 @@ class Chat extends Component {
     setInterval(() => this.tick(), 3000);
   }
     render(){
-        const test = ["ololo", "test"];
         return (
 
               <div name="chats">

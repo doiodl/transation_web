@@ -10,6 +10,8 @@ import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
+import Icon28Send from '@vkontakte/icons/dist/28/send';
+import { FormLayout, FormLayoutGroup, Input } from '@vkontakte/vkui';
 import $ from 'jquery';
 import persik from '../img/persik.png';
 import 'youtube-video-js';
@@ -48,8 +50,6 @@ const Persik = props => {
 			send_req() 
 	}, 150000000);
 
-	// lWidth = screen.width;
-	// myWebView.getSettings().setUserAgentString("Desktop");
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -68,21 +68,11 @@ const Persik = props => {
 					/>
 				</Div>
 				<Chat name='jfajhfajhf'></Chat>
-					{/* <Div className='iframe-container'>
-						<iframe src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io"></iframe>
-					</Div> */} 
-					{/* main */}
-					{/* <YouTubePlayer
-					width='device-width'
-					url='https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io'
-					controls
-					/> */}
-					{/* <iframe allowfullscreen="" frameborder="0" height="400" src="https://www.youtube.com/live_chat?v=Jk0xMsXME1U&embed_domain=doiodl.github.io" width='device-width'></iframe> */}
 				<Div class='chat-input'>
-					<form method='post' id='chat-form'>
-						<input type='text' id='message-text' class='chat-form__input' placeholder='Введите сообщение'></input>
-						<input type='submit' class='chat-form__submit' value='=>'></input>
-					</form>
+					<FormLayout method='post' id='chat-form'>
+						<Input type='text' id='message-text' class='chat-form__input' placeholder='Введите сообщение'></Input>
+						<Button before={<Icon28Send/>} type='submit' class='chat-form__submit' value='=>'></Button>
+					</FormLayout>
 				</Div>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
