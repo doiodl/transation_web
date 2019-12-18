@@ -10,8 +10,10 @@ import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import connect from '@vkontakte/vk-connect';
 
 const Home = ({ id, go, fetchedUser }) => {
-	console.log(navigator.userAgent);
-	navigator.userAgent.toLocaleLowerCase().indexOf("android");
+	function a(){
+		console.log(fetchedUser);
+	}
+	a()
 	return (
 		<Panel id={id}>
 			<Group>

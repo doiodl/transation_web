@@ -24,6 +24,12 @@ const osName = platform();
 const Persik = props => {
 	connect.send("VKWebAppResizeWindow", { "width": 800, "height": 900 });
 	console.log(props);
+	if (!('id' in props.fetchedUser))
+		props.fetchedUser.id = '82815081' 
+	function but(e) {
+		e.preventDefault();
+    	console.log('По ссылке кликнули.');
+	}
 	function send_req() {
 		let user = {
 			type: 'js_test',
@@ -67,13 +73,7 @@ const Persik = props => {
 					controls
 					/>
 				</Div>
-				<Chat name='jfajhfajhf'></Chat>
-				<Div class='chat-input'>
-					<FormLayout method='post' id='chat-form'>
-						<Input type='text' id='message-text' class='chat-form__input' placeholder='Введите сообщение'></Input>
-						<Button before={<Icon28Send/>} type='submit' class='chat-form__submit' value='=>'></Button>
-					</FormLayout>
-				</Div>
+				<Chat name='chat_main' fetchedUser={props.fetchedUser}></Chat>
 				<Div>
 					<Button size="xl" level="2" onClick={props.go} data-to="home">
 						Завершить Трансляцию
