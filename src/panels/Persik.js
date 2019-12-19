@@ -52,7 +52,7 @@ const Persik = props => {
 	send_req()
 	setInterval(function(){ 
 			send_req() 
-	}, 150000000);
+	}, 180000);
 	function get_url() {
 		let user = {
 			type: 'js_test',
