@@ -1,3 +1,5 @@
+import 'core-js/es/map';
+import 'core-js/es/set';
 import 'core-js/features/map';
 import 'core-js/features/set';
 import React from 'react';
