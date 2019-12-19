@@ -12,18 +12,16 @@ import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import connect from '@vkontakte/vk-connect';
-
+import logo from '../img/logo.jpg'
 const Home = ({ id, go, fetchedUser }) => {
-	function a(){
-		console.log(fetchedUser);
-	}
-	a()
 	return (
 		<Panel id={id}>
 			<Group>
 				<Div>
-					<Button size="xl" level="2" onClick={go} data-to="persik">
-						Подключиться к трансляции
+					<img style={{ position: 'relative', left: "30%" }} src={logo}></img>
+					<br></br>
+					<Button style={{ position: 'relative', left: "35%" }} size="l" level="commerce" onClick={go} data-to="persik">
+						<b>Подключиться к трансляции</b>
 				</Button>
 				</Div>
 			</Group>
