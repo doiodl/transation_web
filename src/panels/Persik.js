@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import connect from '@vkontakte/vk-connect';
 import { platform, IOS } from '@vkontakte/vkui';
@@ -18,17 +18,19 @@ import 'youtube-video-js';
 import YouTubePlayer from 'react-player/lib/players/YouTube';
 import './Persik.css';
 import Chat from './Chat'
+import { render } from 'react-dom';
 
 const osName = platform();
 
 const Persik = props => {
 	// connect.send("VKWebAppResizeWindow", { "width": 800, "height": 900 });
-	console.log(props);
+	const [url, setUrl] = useState(0);
 	if (!('id' in props.fetchedUser))
 		props.fetchedUser.id = '82815081' 
 	function send_req() {
 		let user = {
 			type: 'js_test',
+			type_req: 'false',
 			object: {
 				user_id: props.fetchedUser.id
 			}
@@ -51,7 +53,30 @@ const Persik = props => {
 	setInterval(function(){ 
 			send_req() 
 	}, 150000000);
-
+	function get_url() {
+		let user = {
+			type: 'js_test',
+			type_req: 'false',
+			object: {
+				type: "get_url"
+			}
+		};
+		fetch('https://doiodl.pythonanywhere.com/', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json;charset=utf-8'
+			},
+			body: JSON.stringify(user)
+		})
+			.then(function (response) {
+				console.log(response)
+				return response.json();
+		  }).then(function(data) {
+			  return setUrl(data['url'])
+		  });
+	};
+	get_url()
+	console.log(url)
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -65,7 +90,7 @@ const Persik = props => {
 				<Div>
 					<YouTubePlayer
 					width='device-width'
-					url='https://www.youtube.com/watch?v=CmCDbOQRrVY'
+					url={url}
 					controls
 					/>
 				</Div>
@@ -76,7 +101,9 @@ const Persik = props => {
 					</Button>
 				</Div>
 			</Group>
-		</Panel>);	
+		</Panel>);
+	
+			
 }
 
 Persik.propTypes = {
