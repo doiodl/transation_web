@@ -66,6 +66,7 @@ class Chat extends Component {
 			},
 			body: JSON.stringify(user)
       })
+      this.tick(this)
   }
   runScript(e) {
       if (e.key === "Enter" && !e.shiftKey) {
