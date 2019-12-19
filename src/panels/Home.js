@@ -1,3 +1,7 @@
+import 'core-js/es/map';
+import 'core-js/es/set';
+import 'core-js/features/map';
+import 'core-js/features/set';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
