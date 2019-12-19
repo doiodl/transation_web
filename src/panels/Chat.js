@@ -42,6 +42,8 @@ class Chat extends Component {
     console.log('По ссылке кликнули.');
     console.log(this.props.fetchedUser)
     var date = new Date();
+    var hour = (date.getHours() >= 10) ? date.getHours().toString(10) : "0" + date.getHours().toString(10)
+    var min = (date.getMinutes() >= 10) ? date.getMinutes().toString(10) : "0" + date.getMinutes().toString(10)
     let user = {
       type_req: 'chat',
       object: {
@@ -50,8 +52,7 @@ class Chat extends Component {
           'id': this.props.fetchedUser.id,
           'name': this.props.fetchedUser.first_name + " " + this.props.fetchedUser.last_name,
           'msg': $("#message-text").val(),
-          "date_msg": date.getHours().toString(10) +":"+ date.getMinutes().toString
-            (10),
+          "date_msg": hour +":"+ min,
           "photo_200": this.props.fetchedUser.photo_200
         }
 			}
