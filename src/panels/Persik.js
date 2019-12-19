@@ -65,7 +65,7 @@ const Persik = props => {
 				<Div>
 					<YouTubePlayer
 					width='device-width'
-					url='https://www.youtube.com/watch?v=Jk0xMsXME1U'
+					url='https://www.youtube.com/watch?v=CmCDbOQRrVY'
 					controls
 					/>
 				</Div>
