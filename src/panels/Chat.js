@@ -10,7 +10,6 @@ import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Textarea from '@vkontakte/vkui/dist/components/Textarea/Textarea';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
-
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
@@ -57,9 +56,9 @@ class Chat extends Component {
         }
 			}
     };
-    this.setState({
-      msg: ""
-  })
+      this.setState({
+        msg: ""
+      })
     fetch('https://doiodl.pythonanywhere.com/', {
 			method: 'POST',
 			headers: {
@@ -135,7 +134,7 @@ class Chat extends Component {
                 <div style={{ display: "flex", width: "100%"}}>
             <Textarea style={{ width: "90%" }} onKeyPress={this.runScript} id='message-text' onChange={this.onChangeHandler}
             class='chat-form__input' placeholder='Введите сообщение'  value={this.state.msg} />
-                <Button style={{ height: "40px" }} before={<Icon28Send />} class='chat-form__submit' onClick={this.but} ></Button>
+                  <Button style={{ height: "40px" }} before={<Icon28Send />} class='chat-form__submit' onClick={this.but} ></Button>
                 </div>
               </FormLayout>
 				    </Div>
