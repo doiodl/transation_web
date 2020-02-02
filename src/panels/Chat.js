@@ -120,12 +120,12 @@ class Chat extends Component {
     render(){
         return (
           <Group name="chats">
-            <Div id="pole" className="pole" style={{ height: "250px", maxHeight: "250px", overflowY: "auto"}}>
+            <Div id="pole" className="pole" style={{ height: "250px", maxHeight: "250px", overflowY: "auto", whiteSpace: "normal" }}>
               {this.state.massive.map((element, i) => {
                 $("#pole")[0].scrollTop = $("#pole")[0].scrollHeight
-                return (<Cell before={<Avatar src={element.photo_200}/>} >
+                return (<Cell before={<Avatar src={element.photo_200}/>} style={{ width: "90%", whiteSpace: "normal" }} >
                   {element.name} {element.date_msg} <br></br>
-                  {element.msg}
+                  <p align='left' style={{wordBreak: "break-word", whiteSpace: "normal" }}> {element.msg} </p>
                         </Cell>);
               })}
             </Div> 
