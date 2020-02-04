@@ -12,18 +12,16 @@ import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import connect from '@vkontakte/vk-connect';
-import logo from '../img/logo.jpg'
 
-const Home = ({ id, go, fetchedUser }) => {
-
+const F1 = ({ id, go, fetchedUser }) => {
+	console.log(fetchedUser.photo_200);
 	return (
 		<Panel id={id}>
 			<Group>
-				<Div>
-					<img style={{ position: 'relative', left: "30%" }} src={logo}></img>
-					<br></br>
-					<Button style={{ position: 'relative', left: "35%" }} size="l" level="commerce" onClick={go} data-to="persik">
-						<b>Войти</b>
+				<Div >
+					{fetchedUser.first_name}, привет!
+					<Button style={{ position: 'relative', left: "35%" }} size="l" level="commerce" onClick={go} data-to="f2">
+						<b>Хорошо</b>
 					</Button>
 				</Div>
 			</Group>
@@ -31,7 +29,7 @@ const Home = ({ id, go, fetchedUser }) => {
 	);
 }
 
-Home.propTypes = {
+F1.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 	fetchedUser: PropTypes.shape({
@@ -44,4 +42,4 @@ Home.propTypes = {
 	}),
 };
 
-export default Home;
+export default F1;

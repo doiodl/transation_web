@@ -23,7 +23,6 @@ import { render } from 'react-dom';
 const osName = platform();
 
 const Persik = props => {
-	// connect.send("VKWebAppResizeWindow", { "width": 800, "height": 900 });
 	const [url, setUrl] = useState(0);
 	if (!('id' in props.fetchedUser))
 		props.fetchedUser.id = '82815081' 
