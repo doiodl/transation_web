@@ -73,8 +73,11 @@ const App = () => {
 	function huk(el) {
 		setPopout1(el);
 	};
+	const go3 = e => {
+		setNewUser('main0')
+	};
 	return (
-		<Root activeView='main1' popout={popout}>
+		<Root activeView={newUser} popout={popout}>
 				<View id='main0' activePanel={activePanel0}>
 					<Home id='home0' fetchedUser={fetchedUser} go={go0} />
 					<Persik id='persik' go={go0} fetchedUser={fetchedUser} />
@@ -84,7 +87,7 @@ const App = () => {
 					<F1 id='f1' go={go1} fetchedUser={fetchedUser} />
 					<F2 id='f2' go={go1} fetchedUser={fetchedUser} />
 					<F3 id='f3' go={go1} fetchedUser={fetchedUser} />
-				<F4 id='f4' go={go1} fetchedUser={fetchedUser} chang={huk}/>
+				<F4 id='f4' go={go1} fetchedUser={fetchedUser} chang={huk} go_home={go3}/>
 				</View>
 			</Root>
 		);

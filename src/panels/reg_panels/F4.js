@@ -40,6 +40,7 @@ class F4 extends Component {
 		this.setState({
 		  actionsLog: [...this.state.actionsLog, value],
 		});
+		  this.props.go_home();
 	  }
 	
 	openDefault() {
@@ -60,7 +61,6 @@ class F4 extends Component {
 	  closePopout () {
 		this.props.chang(null);
 	  }
-
 	render() {
 		return (
 			<Panel id={this.props.id} popout={this.state.popout}>
@@ -75,7 +75,7 @@ class F4 extends Component {
 							<b>Хорошо</b>
 					</Button>
 					<br></br>
-					<Button style={{ position: 'relative', left: "35%" }} level="tertiary" onClick={this.openDestructive} data-to="f1">Заберу позже</Button>
+					<Button style={{ position: 'relative', left: "35%" }} level="tertiary" onClick={this.props.go_home} data-to="f1">Заберу позже</Button>
 					</Div>
 			</Panel>
 		);
