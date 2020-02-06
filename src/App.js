@@ -30,12 +30,13 @@ const App = () => {
 				document.body.attributes.setNamedItem(schemeAttribute);
 			}
 		});
-		async function getNew(user_id) {
+		async function getNew(user_id, user_name) {
 			let user = {
-				inputName : user_id,
+				inputId: user_id,
+				inputName: user_name,
+				inputPhone: 71234567890,
 				inputEmail : 't@mail.ru',
 				inputPassword : '1234'
-
 			};
 			fetch('https://artem4ke.pythonanywhere.com/new_reg/', {
 				method: 'POST',
@@ -48,6 +49,7 @@ const App = () => {
 					console.log(response)
 					return response.json();
 				}).then(function (data) {
+					console.log(data)
 					console.log(typeof (data['answer'].toString(10)));
 					const Ac = 'main' + data['answer'].toString(10);
 					console.log(Ac);
@@ -57,8 +59,8 @@ const App = () => {
 		async function fetchData() {
 			const user = await connect.sendPromise('VKWebAppGetUserInfo');
 			setUser(user);
-			console.log(user.id);
-			await getNew(user.id);
+			console.log(user);
+			await getNew(user.id, user.first_name);
 			setPopout(null);
 		}
 		fetchData();

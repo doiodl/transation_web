@@ -21,9 +21,12 @@ import { platform, IOS } from '@vkontakte/vkui';
 const osName = platform();
 const F2 = ({ id, go, fetchedUser }) => {
 	function set_sub(e) {
-		// const element = document.getElementById('forms_my').children[0].children;
-		// for (let i = 0; i < element.length; i++)
-		// 	console.log(element[i]);
+		console.log("da");
+		const element = document.getElementsByClassName('Checkbox__input');
+		console.log(element)
+		for (let i = 0; i < element.length; i++)
+			console.log(element[i].checked);
+			console.log("da");
 		// console.log(element)
 		go(e);
 	}
