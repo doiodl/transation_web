@@ -28,8 +28,11 @@ const F2 = ({ id, go, fetchedUser }) => {
 			if (element[i].checked == true)
 				a = a | parseInt(element[i].id, '10');
 		}
-		fetchedUser.reg_mas.num = a;
-		go(e)
+		if (a != 0)
+		{
+			fetchedUser.reg_mas.num = a;
+			go(e)
+		}
 	}
 	return (
 		<Panel id={id}>
