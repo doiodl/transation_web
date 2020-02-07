@@ -25,31 +25,38 @@ const osName = platform();
 class F4 extends Component {
 	constructor(props) {
 		super(props);
-	
+		console.log(props.fetchedUser.reg_mas)
 		this.state = {
 		  popout: null,
 		  actionsLog: [],
 		};
 		this.openDefault = this.openDefault.bind(this);
 		this.closePopout = this.closePopout.bind(this);
-		this.addActionLogItem = this.addActionLogItem.bind(this);
+		this.go_home_andreg = this.go_home_andreg.bind(this);
 	  }
-	
-	
-	  addActionLogItem(value) {
-		this.setState({
-		  actionsLog: [...this.state.actionsLog, value],
-		});
-		  this.props.go_home();
-	  }
-	
+	go_home_andreg()
+	{
+		let user = {
+			inputId: this.props.fetchedUser.id,
+			inputNum: this.props.fetchedUser.reg_mas.num,
+			inputYear: this.props.fetchedUser.reg_mas.year
+		}
+		fetch('https://artem4ke.pythonanywhere.com/new_reg_obj/', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json;charset=utf-8'
+			},
+			body: JSON.stringify(user)
+		})
+		this.props.go_home();
+	}
 	openDefault() {
 		this.props.chang(
 			<Alert
 				actions={[{
 					title: 'Окей',
 					autoclose: true,
-					action: () => this.addActionLogItem('Право на модерацию контента добавлено.'),
+					action: () => this.go_home_andreg(),
 				}]}
 				onClose={this.closePopout}
 			>
@@ -75,7 +82,7 @@ class F4 extends Component {
 							<b>Хорошо</b>
 					</Button>
 					<br></br>
-					<Button style={{ position: 'relative', left: "35%" }} level="tertiary" onClick={this.props.go_home} data-to="f1">Заберу позже</Button>
+					<Button style={{ position: 'relative', left: "35%" }} level="tertiary" onClick={this.go_home_andreg} data-to="f1">Заберу позже</Button>
 					</Div>
 			</Panel>
 		);

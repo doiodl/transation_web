@@ -21,14 +21,15 @@ import { platform, IOS } from '@vkontakte/vkui';
 const osName = platform();
 const F2 = ({ id, go, fetchedUser }) => {
 	function set_sub(e) {
-		console.log("da");
 		const element = document.getElementsByClassName('Checkbox__input');
-		console.log(element)
+		var a = 0;
 		for (let i = 0; i < element.length; i++)
-			console.log(element[i].checked);
-			console.log("da");
-		// console.log(element)
-		go(e);
+		{
+			if (element[i].checked == true)
+				a = a | parseInt(element[i].id, '10');
+		}
+		fetchedUser.reg_mas.num = a;
+		go(e)
 	}
 	return (
 		<Panel id={id}>
@@ -39,8 +40,18 @@ const F2 = ({ id, go, fetchedUser }) => {
 				Какие предметы сдаешь?
 			</PanelHeader>
 			<FormLayout id='forms_my'>
-				<Checkbox id='math'>Матан</Checkbox>
-				<Checkbox id='rus'>Русский</Checkbox>
+				<Checkbox id='2048'>Английский</Checkbox>
+				<Checkbox id='1024'>Биология</Checkbox>
+				<Checkbox id='512'>География</Checkbox>
+				<Checkbox id='256'>Информатика</Checkbox>
+				<Checkbox id='128'>История</Checkbox>
+				<Checkbox id='64'>Литература</Checkbox>
+				<Checkbox id='32'>Математика базовая</Checkbox>
+				<Checkbox id='16'>Математика профильная</Checkbox>
+				<Checkbox id='8'>Обществознание</Checkbox>
+				<Checkbox id='4'>Русский язык</Checkbox>
+				<Checkbox id='2'>Физика</Checkbox>
+				<Checkbox id='1'>Химия</Checkbox>
 			</FormLayout>
 				<Div >
 					<Button style={{ position: 'relative', left: "35%" }} size="l" level="commerce" onClick={set_sub} data-to="f3">

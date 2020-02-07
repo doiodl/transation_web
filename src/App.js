@@ -89,7 +89,7 @@ const App = () => {
 					<F1 id='f1' go={go1} fetchedUser={fetchedUser} />
 					<F2 id='f2' go={go1} fetchedUser={fetchedUser} />
 					<F3 id='f3' go={go1} fetchedUser={fetchedUser} />
-				<F4 id='f4' go={go1} fetchedUser={fetchedUser} chang={huk} go_home={go3}/>
+					<F4 id='f4' go={go1} fetchedUser={fetchedUser} chang={huk} go_home={go3}/>
 				</View>
 			</Root>
 		);

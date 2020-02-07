@@ -14,7 +14,7 @@ import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import connect from '@vkontakte/vk-connect';
 
 const F1 = ({ id, go, fetchedUser }) => {
-	console.log(fetchedUser.photo_200);
+	fetchedUser.reg_mas = {}
 	return (
 		<Panel id={id}>
 			<Group>
