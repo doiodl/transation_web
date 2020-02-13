@@ -23,12 +23,27 @@ const F2 = ({ id, go, fetchedUser }) => {
 	function set_sub(e) {
 		const element = document.getElementsByClassName('Checkbox__input');
 		var a = 0;
+		fetchedUser.objects = []
 		for (let i = 0; i < element.length; i++)
 		{
-			if (element[i].checked == true)
+			// console.log(element[i].name)
+			if (element[i].checked === true)
+			{
 				a = a | parseInt(element[i].id, '10');
+				if (element[i].name !== 'nane')
+				{
+					var name = element[i].name
+					var val = element[i].value
+					var dd = [name, val]
+					fetchedUser.objects.push(dd)
+				}
+					
+			}
 		}
-		if (a != 0)
+		// for(let fruit of fetchedUser.objects) {
+		// 	console.log(fruit); // огурцов, помидоров, сметаны
+		//   }
+		if (a !== 0)
 		{
 			fetchedUser.reg_mas.num = a;
 			go(e)
@@ -43,18 +58,18 @@ const F2 = ({ id, go, fetchedUser }) => {
 				Какие предметы сдаешь?
 			</PanelHeader>
 			<FormLayout id='forms_my'>
-				<Checkbox id='2048'>Английский</Checkbox>
-				<Checkbox id='1024'>Биология</Checkbox>
-				<Checkbox id='512'>География</Checkbox>
-				<Checkbox id='256'>Информатика</Checkbox>
-				<Checkbox id='128'>История</Checkbox>
-				<Checkbox id='64'>Литература</Checkbox>
-				<Checkbox id='32'>Математика базовая</Checkbox>
-				<Checkbox id='16'>Математика профильная</Checkbox>
-				<Checkbox id='8'>Обществознание</Checkbox>
-				<Checkbox id='4'>Русский язык</Checkbox>
-				<Checkbox id='2'>Физика</Checkbox>
-				<Checkbox id='1'>Химия</Checkbox>
+				<Checkbox id='2048' name='151502131' value='Английский'>Английский</Checkbox>
+				<Checkbox id='1024' name='nane' value='Биология'>Биология</Checkbox>
+				<Checkbox id='512' name='nane' value='География'>География</Checkbox>
+				<Checkbox id='256' name='nane' value='Информатика'>Информатика</Checkbox>
+				<Checkbox id='128' name='nane' value='История'>История</Checkbox>
+				<Checkbox id='64' name='nane' value='Литература'>Литература</Checkbox>
+				<Checkbox id='32' name='151093324' value='Математика базовая'>Математика базовая</Checkbox>
+				<Checkbox id='16' name='151093324' value='Математика профильная'>Математика профильная</Checkbox>
+				<Checkbox id='8' name='151857790' value='Обществознание'>Обществознание</Checkbox>
+				<Checkbox id='4' name='151406643' value='Русский язык'>Русский язык</Checkbox>
+				<Checkbox id='2' name='149450743' value='Физика'>Физика</Checkbox>
+				<Checkbox id='1' name='nane' value='Химия'>Химия</Checkbox>
 			</FormLayout>
 				<Div >
 					<Button style={{ position: 'relative', left: "35%" }} size="l" level="commerce" onClick={set_sub} data-to="f3">

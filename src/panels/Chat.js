@@ -127,7 +127,7 @@ class Chat extends Component {
                   {element.name} {element.date_msg} <br></br>
                   <p align='left' style={{wordBreak: "break-word", whiteSpace: "normal" }}> {element.msg} </p>
                         </Cell>);
-              })}
+              } ) }
             </Div> 
             <Div class='chat-input' >
               <FormLayout id='chat-form' >
