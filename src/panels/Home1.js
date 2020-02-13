@@ -20,7 +20,7 @@ const Home1 = ({ id, go, fetchedUser }) => {
 		<Panel id={id}>
 			<Group>
 				<Div >
-					<img style={{position:'relative', marginLeft: '30%', width: '30%'}} src={logo}></img>
+					<img style={{position:'relative', marginLeft: '25%', width: '50%'}} src={logo}></img>
 					<br></br>
 					<Button style={{ position: 'relative', left: "42%" }} size="l" level="commerce" onClick={go} data-to="f1">
 						<b>Регистрация</b>
