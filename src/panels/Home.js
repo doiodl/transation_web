@@ -20,9 +20,9 @@ const Home = ({ id, go, fetchedUser }) => {
 		<Panel id={id}>
 			<Group>
 				<Div>
-					<img style={{ position: 'relative', left: "30%" }} src={logo}></img>
+					<img style={{ position: 'relative', left: "50%" }} src={logo}></img>
 					<br></br>
-					<Button style={{ position: 'relative', left: "35%" }} size="l" level="commerce" onClick={go} data-to="persik">
+					<Button style={{ position: 'relative', left: "50%" }} size="l" level="commerce" onClick={go} data-to="persik">
 						<b>Войти</b>
 					</Button>
 				</Div>
