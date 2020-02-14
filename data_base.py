@@ -85,3 +85,18 @@ VALUES
 			if (element[i].checked)
 				a = a | element[i].id.toInt();
 		}
+
+DELIMITER $$
+CREATE PROCEDURE `sp_checkUser`(
+    IN p_id BIGINT(20),
+    IN p_name VARCHAR(255),
+    IN p_email VARCHAR(255),
+    IN p_phone VARCHAR(12),
+    IN p_password VARCHAR(255)
+)
+BEGIN
+IF ( select exists (select 1 from tbl_user where user_id = p_id) ) THEN
+        select 'Username Exists !!';
+END IF;
+END$$
+DELIMITER ;

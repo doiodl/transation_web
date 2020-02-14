@@ -39,21 +39,21 @@ class F4 extends Component {
 		this.changbutt = this.changbutt.bind(this);
 		console.log(this.state.but)
 	  }
-	go_home_andreg()
+	go_home_andreg(e)
 	{
-		let user = {
-			inputId: this.props.fetchedUser.id,
-			inputNum: this.props.fetchedUser.reg_mas.num,
-			inputYear: this.props.fetchedUser.reg_mas.year
-		}
-		fetch('https://artem4ke.pythonanywhere.com/new_reg_obj/', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json;charset=utf-8'
-			},
-			body: JSON.stringify(user)
-		})
-		this.props.go_home();
+		// let user = {
+		// 	inputId: this.props.fetchedUser.id,
+		// 	inputNum: this.props.fetchedUser.reg_mas.num,
+		// 	inputYear: this.props.fetchedUser.reg_mas.year
+		// }
+		// fetch('https://artem4ke.pythonanywhere.com/new_reg_obj/', {
+		// 	method: 'POST',
+		// 	headers: {
+		// 		'Content-Type': 'application/json;charset=utf-8'
+		// 	},
+		// 	body: JSON.stringify(user)
+		// })
+		this.props.go(e);
 	}
 	
 	changbutt(value)
@@ -77,20 +77,6 @@ class F4 extends Component {
 			if (result)
 				this.changbutt(el.value)
 		}).catch(error => console.log('er'));
-
-		// this.props.chang(
-		// 	<Alert
-		// 		actions={[{
-		// 			title: 'Окей',
-		// 			autoclose: true,
-		// 			// action: () => this.go_home_andreg(),
-		// 		}]}
-		// 		onClose={this.closePopout}
-		// 	>
-		// 		<h2>Проверяй свои </h2>
-		// 		<p>Довфвфв.</p>
-		// 	</Alert>
-		// );
 	  }
 	  closePopout () {
 		this.props.chang(null);
@@ -102,17 +88,15 @@ class F4 extends Component {
 					left={<HeaderButton onClick={this.props.go} data-to="f3">
 						{osName === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
 					</HeaderButton>}
-					rigth={<HeaderButton>Завершить Регистрацию</HeaderButton>}
 					>
 					Хочешь получить бонус?
 				</PanelHeader>
 				<Div >
 					{
-						// console.log(this.props.fetchedUser.objects)
 						this.props.fetchedUser.objects.map((key, item) => {
 							console.log(key, item)
 								return (
-									<Cell asideContent={<Button size="l" level={this.state.but[key[0]]} value={key[0]} onClick=						{this.openDefault} data-to="f1">
+									<Cell asideContent={<Button size="l" level={this.state.but[key[0]]} value={key[0]} onClick=						{this.openDefault} data-to="f5">
 												<b>Забрать</b>
 											</Button>}>
 										<p>{key[1]}</p>
@@ -122,7 +106,7 @@ class F4 extends Component {
 						)
 					}
 					<br></br>
-					<Button style={{ position: 'relative', left: "35%" }} level="tertiary" onClick={this.go_home_andreg} data-to="f1">Заберу позже</Button>
+					<Button style={{ position: 'relative', left: "35%" }} level="tertiary" onClick={this.props.go} data-to="f5">Заберу позже</Button>
 					</Div>
 			</Panel>
 		);

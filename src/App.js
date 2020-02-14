@@ -12,6 +12,7 @@ import F1 from './panels/reg_panels/F1';
 import F2 from './panels/reg_panels/F2';
 import F3 from './panels/reg_panels/F3';
 import F4 from './panels/reg_panels/F4';
+import F5 from './panels/reg_panels/F5';
 import { render } from 'react-dom';
 import { func } from 'prop-types';
 
@@ -20,7 +21,7 @@ const App = () => {
 	const [activePanel1, setActivePanel1] = useState('home1');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
-	const [newUser, setNewUser] = useState('main1');
+	const [newUser, setNewUser] = useState('main0');
 	const [popout1, setPopout1] = useState(null);
 	useEffect(() => {
 		connect.subscribe(({ detail: { type, data }}) => {
@@ -38,7 +39,7 @@ const App = () => {
 				inputEmail : 't@mail.ru',
 				inputPassword : '1234'
 			};
-			fetch('https://artem4ke.pythonanywhere.com/new_reg/', {
+			fetch('https://artem4ke.pythonanywhere.com/check_user/', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json;charset=utf-8'
@@ -60,7 +61,7 @@ const App = () => {
 			const user = await connect.sendPromise('VKWebAppGetUserInfo');
 			setUser(user);
 			console.log(user);
-			// await getNew(user.id, user.first_name);
+			await getNew(user.id, user.first_name);
 			setPopout(null);
 		}
 		fetchData();
@@ -89,7 +90,8 @@ const App = () => {
 					<F1 id='f1' go={go1} fetchedUser={fetchedUser} />
 					<F2 id='f2' go={go1} fetchedUser={fetchedUser} />
 					<F3 id='f3' go={go1} fetchedUser={fetchedUser} />
-					<F4 id='f4' go={go1} fetchedUser={fetchedUser} chang={huk} go_home={go3}/>
+				<F4 id='f4' go={go1} fetchedUser={fetchedUser} chang={huk} go_home={go3} />
+				<F5 id='f5' go={go1} fetchedUser={fetchedUser} chang={huk} go_home={go3}/>
 				</View>
 			</Root>
 		);
